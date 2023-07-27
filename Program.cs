@@ -9,6 +9,16 @@ namespace Project
     {
         static void Main(string[] args)
         {
+            void FillArray(int[] array, int minValue = -9, int maxValue = 9)
+            {
+                maxValue++;
+                Random rnd = new Random();
+                for (int i = 0; i < array.Length; i++)
+                {
+                    array[i] = rnd.Next(minValue, maxValue);
+                }
+            }
+
             void Print(int[] array)
             {
                 for (int i = 0; i < array.Length; i++)
@@ -17,6 +27,8 @@ namespace Project
                 }
                 Console.WriteLine();
             }
+
+
             void Task25()
             {
                 /* Задача 25: Используя определение степени числа, напишите цикл, который принимает на вход два натуральных числа (A и B) и возводит число A в степень B.
@@ -24,9 +36,8 @@ namespace Project
                                 2, 4 -> 16 */
 
 
-                int a = 3;
-                int b = 5;
-
+                int a = MyLibClass.Input("Введите число возводимое в степень: ");
+                int b = MyLibClass.Input("Введите степень числа: ");
 
                 int result = 1;
 
@@ -35,7 +46,7 @@ namespace Project
                 {
                     result *= a;
                 }
-                Console.WriteLine($"{a}*{b} = {result}");
+                Console.WriteLine($"Решение: {a}*{b} = {result}");
             }
 
 
@@ -45,9 +56,7 @@ namespace Project
                                 452 -> 11
                                 82 -> 10
                                 9012 -> 12 */
-                int number = 123456;
-
-
+                int number = MyLibClass.Input("Введите число сложения суммы цифр: ");
                 int sum = 0;
 
 
@@ -66,7 +75,7 @@ namespace Project
                 /* Задача 29: Напишите программу, которая задаёт массив из 8 случайных целых чисел и выводит отсортированный по модулю массив.
                                 -2, 1, 7, 5, 19 -> [1, -2, 5, 7, 19]
                                 6, 1, -33 -> [1, 6, -33] */
-                int size = 8; //MyLibClass.Input("Введите размер массива: ");
+                int size = MyLibClass.Input("Введите целое число размера массива для сортировки по модулю: ");
                 int[] numbers = new int[size];
                 FillArray(numbers);
                 Print(numbers);
@@ -88,6 +97,7 @@ namespace Project
                 Console.WriteLine();
                 Print(numbers);
             }
+
             Console.Clear();
             Task29();
 
