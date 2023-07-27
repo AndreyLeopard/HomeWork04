@@ -33,14 +33,11 @@ namespace Project
             {
                 /* Задача 25: Используя определение степени числа, напишите цикл, который принимает на вход два натуральных числа (A и B) и возводит число A в степень B.
                                 3, 5 -> 243 (3⁵)
-                                2, 4 -> 16 */
-
-
+                                2, 4 -> 16 */                
                 int a = MyLibClass.Input("Введите число возводимое в степень: ");
                 int b = MyLibClass.Input("Введите степень числа: ");
-
+                
                 int result = 1;
-
 
                 for (int i = 1; i <= b; i++)
                 {
@@ -48,7 +45,6 @@ namespace Project
                 }
                 Console.WriteLine($"Решение: {a}*{b} = {result}");
             }
-
 
             void Task27()
             {
@@ -58,7 +54,6 @@ namespace Project
                                 9012 -> 12 */
                 int number = MyLibClass.Input("Введите число сложения суммы цифр: ");
                 int sum = 0;
-
 
                 Console.Write($"Сумма цифр числа {number} равна ");
                 while (number > 0)
@@ -79,7 +74,6 @@ namespace Project
                 int[] numbers = new int[size];
                 FillArray(numbers);
                 Print(numbers);
-
 
                 int lastIndex = numbers.Length - 1;
                 for (int i = 0; i < lastIndex - 1; i++)
